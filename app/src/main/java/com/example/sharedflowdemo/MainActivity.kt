@@ -22,6 +22,8 @@ import androidx.compose.runtime.remember
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,7 +79,11 @@ fun MainScreen(
 
     LazyColumn(modifier = modifier) {
         items(messages) { message ->
-            Text(text = "Collected Value = $message")
+            Text(
+                text = "Collected Value = $message",
+                style = MaterialTheme.typography.headlineLarge,
+                modifier = Modifier.padding(5.dp)
+            )
         }
     }
 }
