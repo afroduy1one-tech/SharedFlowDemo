@@ -22,6 +22,8 @@ class DemoViewModel : ViewModel() {
             for (i in 1..1000) {
                 delay(2000)
                 _sharedFlow.emit(i)
+                println("Emitted: $i")
+
             }
         }
     }

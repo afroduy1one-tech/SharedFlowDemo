@@ -20,6 +20,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +66,7 @@ fun MainScreen(
     LaunchedEffect(key1 = Unit) {
         sharedFlow.collect { value ->
             messages.add(value)
+            println("Collected: $value")
         }
     }
 
